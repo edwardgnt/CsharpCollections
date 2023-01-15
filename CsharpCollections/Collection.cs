@@ -63,8 +63,45 @@ namespace CsharpCollections
             users.Add(_user2.UserId, _user2);
             users.Add(_user3.UserId, _user3);
 
-            foreach(var user in users)
-                Console.WriteLine($"User: {user.Key} {user.Value.FirstName} {user.Value.LastName}");
+            User user = null;
+            bool isMatchFound = users.TryGetValue(2, out user);
+
+            if(isMatchFound)
+            {
+                Console.WriteLine($"User: {user.UserId} {user.FirstName} {user.LastName}");
+            }
+
+            //foreach (var user in users)
+            //    Console.WriteLine($"User: {user.Key} {user.Value.FirstName} {user.Value.LastName}");
+        }
+
+        public void ListFunction()
+        {
+            Console.WriteLine("List Funciton");
+
+            List<User> users = new List<User>();
+
+            users.Add(_user1);
+            users.Add(_user2);
+            users.Add(_user3);
+
+            //foreach(var user in users)
+            //{
+            //    Console.WriteLine($"User: {user.UserId} {user.FirstName} {user.LastName}");
+            //}
+
+            // Find the second user in the list
+            //var user = users.FirstOrDefault(u => u.UserId == 3);
+            //Console.WriteLine($"User: {user.UserId} {user.FirstName} {user.LastName}");
+
+            var matchUsers = users.Where(u => u.FirstName.ToLower() == "paul").ToList();
+
+            foreach(var user in matchUsers)
+            {
+                Console.WriteLine($"User: {user.UserId} {user.FirstName} {user.LastName}");
+            }
+
+
         }
 
     }

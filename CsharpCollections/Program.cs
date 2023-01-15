@@ -5,6 +5,8 @@ var collections = new Collection();
 
 // collections.ArraysFunction();
 
-collections.DictionaryFunction();
+// collections.DictionaryFunction();
+
+collections.ListFunction();
 
 Console.ReadLine();

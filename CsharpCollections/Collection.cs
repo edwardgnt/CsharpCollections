@@ -94,9 +94,16 @@ namespace CsharpCollections
             //var user = users.FirstOrDefault(u => u.UserId == 3);
             //Console.WriteLine($"User: {user.UserId} {user.FirstName} {user.LastName}");
 
-            var matchUsers = users.Where(u => u.FirstName.ToLower() == "paul").ToList();
+            //var matchUsers = users.Where(u => u.FirstName.ToLower() == "paul").ToList();
 
-            foreach(var user in matchUsers)
+            //foreach(var user in matchUsers)
+            //{
+            //    Console.WriteLine($"User: {user.UserId} {user.FirstName} {user.LastName}");
+            //}
+
+            var matchUsers = users.Where(u => u.FirstName.ToLower().Contains("jo")).ToList();
+
+            foreach (var user in matchUsers)
             {
                 Console.WriteLine($"User: {user.UserId} {user.FirstName} {user.LastName}");
             }
